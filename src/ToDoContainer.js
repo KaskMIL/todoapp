@@ -6,9 +6,15 @@ import Header from './Header';
 import InputTodo from './InputTodo';
 
 const TodoContainer = () => {
-  const [todos, setTodos] = useState([]);
+  const [todos, setTodos] = useState(getInitialTodos());
 
-  useEffect(() => {
+  function getInitialTodos() {
+    const temp = localStorage.getItem('todos');
+    const data = JSON.parse(temp);
+    return data || [];
+  }
+
+  /*useEffect(() => {
     console.log('test run');
     // getting stored items
     const temp = localStorage.getItem('todos');
@@ -17,7 +23,7 @@ const TodoContainer = () => {
     if (data) {
       setTodos(data)
     }
-  }, [setTodos]);
+  }, [setTodos]); */
 
   useEffect(() => {
     const temp = JSON.stringify(todos);
