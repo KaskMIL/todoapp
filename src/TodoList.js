@@ -12,6 +12,7 @@ class TodoList extends React.Component {
               todo={todo}
               handleChangeProps={this.props.handleChangeProps}
               handleDeleteProps={this.props.handleDeleteProps}
+              handleEditProps={this.props.handleEditProps}
             />
           );
         })}
