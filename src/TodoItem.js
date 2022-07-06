@@ -13,12 +13,12 @@ const TodoItem = props => {
   }, [])
 
   const handleEditing = () => {
-    setEditing(true);
+    setEditing(!editing);
   };
 
   const handleKeyDown = e => {
     if (e.key === 'Enter') {
-      setEditing(false);
+      setEditing(!editing);
     }
   };
 
@@ -50,11 +50,11 @@ const TodoItem = props => {
             onChange={() => props.handleChangeProps(id)}
           />
           <button
-            onClick={() => props.handleDeleteProps(props.todo.id)}
+            onClick={() => props.handleDeleteProps(id)}
           >
             Delete
           </button>
-          <span style={props.todo.completed ? completedStyle : null}>
+          <span style={completed ? completedStyle : null}>
             {title}
           </span>
         </div>
