@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { v4 as uuidv4 } from 'uuid';
-import { Route, Routes, Switch } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import Header from './Header';
 
 import TodoList from './TodoList';
-import Header from './Header';
 import InputTodo from './InputTodo';
 
 const TodoContainer = () => {
@@ -74,22 +74,21 @@ const TodoContainer = () => {
   };
 
   return (
-    <Routes>
-    <Route path="/src">
-      <div className="container">
-        <div className="inner">
-          <Header />
-          <InputTodo addItemProps={addTodoItem} />
-          <TodoList
-            todos={todos}
-            handleChangeProps={handleChange}
-            handleDeleteProps={delTodo}
-            handleEditProps={setEdit}
-          />
-        </div>
+    <div className="container">
+      <Header />
+      <nav>
+        <Link to={'/'}>Home</Link>
+      </nav>
+      <div className="inner">
+        <InputTodo addItemProps={addTodoItem} />
+        <TodoList
+          todos={todos}
+          handleChangeProps={handleChange}
+          handleDeleteProps={delTodo}
+          handleEditProps={setEdit}
+        />
       </div>
-    </Route>
-    </Routes>
+    </div>
   );
 };
 
