@@ -32,8 +32,7 @@ const TodoContainer = () => {
   }, [todos]);
 
   const handleChange = (id) => {
-    setTodos((prevTodos) => {
-      prevTodos.map((todo) => {
+    setTodos(prevTodos => prevTodos.map((todo) => {
         if (todo.id === id) {
           return {
             ...todo,
@@ -41,8 +40,8 @@ const TodoContainer = () => {
           };
         }
         return todo;
-      });
-    });
+      })
+    );
   };
 
   const delTodo = (id) => {
