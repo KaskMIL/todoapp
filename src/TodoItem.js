@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 // Import styling component
 import styles from './components/TodoItem.module.scss';
+import { BsTrash } from 'react-icons/bs'
 
 const TodoItem = props => {
 
@@ -52,7 +53,7 @@ const TodoItem = props => {
           <button
             onClick={() => props.handleDeleteProps(id)}
           >
-            Delete
+            <BsTrash />
           </button>
           <span style={completed ? completedStyle : null}>
             {title}
