@@ -1,9 +1,10 @@
+/* eslint-disable */
 import React, { useState } from 'react';
-import { BsPlusCircleFill } from 'react-icons/bs'
+import { BsPlusCircleFill } from 'react-icons/bs';
 
-const InputTodo = props => {
+const InputTodo = (props) => {
   const [inputText, setInputText] = useState({
-    title: ''
+    title: '',
   });
 
   const onChange = (e) => {
@@ -24,21 +25,20 @@ const InputTodo = props => {
       alert('Please write an Item');
     }
   };
-  
-  return (
-     <form className="form-container" onSubmit={handleSubmit}>
-       <input
-         className="input-text"
-         type="text"
-         name="title"
-         placeholder="Add Todo"
-         value={inputText.title}
-         onChange={onChange}
-       />
-       <button className="input-submit"><BsPlusCircleFill /></button>
-     </form>
-    );
-  }
 
+  return (
+    <form className="form-container" onSubmit={handleSubmit}>
+      <input
+        className="input-text"
+        type="text"
+        name="title"
+        placeholder="Add Todo"
+        value={inputText.title}
+        onChange={onChange}
+      />
+      <button className="input-submit"><BsPlusCircleFill /></button>
+    </form>
+  );
+};
 
 export default InputTodo;

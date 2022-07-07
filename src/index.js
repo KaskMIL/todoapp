@@ -11,10 +11,10 @@ ReactDOM.render(
   <React.StrictMode>
     <Router>
       <Routes>
-        <Route path='/' element={<App />}/>
-        <Route path='ToDoContainer' element={<TodoContainer/>}/>
+        <Route path="/" element={<App />} />
+        <Route path="ToDoContainer" element={<TodoContainer />} />
       </Routes>
     </Router>
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById('root'),
 );

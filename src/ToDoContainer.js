@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React, { useState, useEffect } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import { Link } from 'react-router-dom';
@@ -15,7 +16,7 @@ const TodoContainer = () => {
     return data || [];
   }
 
-  /*useEffect(() => {
+  /* useEffect(() => {
     console.log('test run');
     // getting stored items
     const temp = localStorage.getItem('todos');
@@ -32,29 +33,26 @@ const TodoContainer = () => {
   }, [todos]);
 
   const handleChange = (id) => {
-    setTodos(prevTodos => prevTodos.map((todo) => {
-        if (todo.id === id) {
-          return {
-            ...todo,
-            completed: !todo.completed,
-          };
-        }
-        return todo;
-      })
-    );
+    setTodos((prevTodos) => prevTodos.map((todo) => {
+      if (todo.id === id) {
+        return {
+          ...todo,
+          completed: !todo.completed,
+        };
+      }
+      return todo;
+    }));
   };
 
   const delTodo = (id) => {
     setTodos([
-      ...todos.filter((todo) => {
-        return todo.id !== id;
-      }),
+      ...todos.filter((todo) => todo.id !== id),
     ]);
   };
 
   const addTodoItem = (title) => {
     const newTodo = {
-      title: title,
+      title,
       id: uuidv4(),
       complete: false,
     };
@@ -68,7 +66,7 @@ const TodoContainer = () => {
           todo.title = newTitle;
         }
         return todo;
-      })
+      }),
     );
   };
 
@@ -76,7 +74,7 @@ const TodoContainer = () => {
     <div className="container">
       <Header />
       <nav>
-        <Link to={'/'}>Home</Link>
+        <Link to="/">Home</Link>
       </nav>
       <div className="inner">
         <InputTodo addItemProps={addTodoItem} />
